@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  get 'sessions/create'
+
   get 'pages/index'
 
   root to: 'pages#index'
+  get '/auth/:provider/callback', to: 'sessions#create'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
